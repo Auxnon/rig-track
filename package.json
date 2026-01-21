@@ -17,7 +17,7 @@
     "@shopify/react-native-skia": "^0.1.240",
     "@tensorflow/tfjs": "^4.15.0",
     "@tensorflow/tfjs-react-native": "^0.8.0",
-    "@tensorflow-models/hand-pose-detection": "^2.1.1",
+    "@tensorflow-models/hand-pose-detection": "^2.0.1",
     "react-native-worklets-core": "^0.3.0",
     "react-native-fs": "^2.20.0",
     "expo-gl": "^13.6.0",
