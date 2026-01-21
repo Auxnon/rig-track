@@ -23,7 +23,3 @@ declare module 'react-native-vision-camera' {
   export function useCameraDevice(position: 'front' | 'back'): any;
   export function useFrameProcessor(processor: (frame: any) => void, dependencies: any[]): any;
 }
-
-declare module 'react-native-worklets-core' {
-  export function runOnJS<T extends (...args: any[]) => any>(fn: T): T;
-}

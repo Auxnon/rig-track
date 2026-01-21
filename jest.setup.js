@@ -18,6 +18,6 @@ jest.mock('@shopify/react-native-skia', () => ({
   vec: jest.fn((x, y) => ({x, y})),
 }));
 
-jest.mock('react-native-worklets-core', () => ({
+jest.mock('react-native-reanimated', () => ({
   runOnJS: jest.fn(fn => fn),
 }));

@@ -1,7 +1,7 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {StyleSheet, View, Text, Dimensions, ActivityIndicator} from 'react-native';
 import {Camera, useCameraDevice, useFrameProcessor} from 'react-native-vision-camera';
-import {runOnJS} from 'react-native-worklets-core';
+import {runOnJS} from 'react-native-reanimated';
 import * as tf from '@tensorflow/tfjs';
 import {useHandTracking, HandLandmarks} from '../hooks/useHandTracking';
 import HandOverlay from './HandOverlay';
