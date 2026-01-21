@@ -24,19 +24,30 @@ const HandTrackingCamera = () => {
     }
 
     try {
-      // Convert frame to tensor (this is a simplified version)
-      // In production, you'd use a more efficient conversion method
-      const imageTensor = tf.browser.fromPixels({
+      // TODO: Implement proper frame to tensor conversion
+      // This is a simplified version for demonstration
+      // In production, use @tensorflow/tfjs-react-native's image conversion utilities
+      // such as decodeJpeg() or other platform-specific methods
+      
+      // Note: tf.browser.fromPixels is not available in React Native
+      // Use proper RN tensor conversion methods from @tensorflow/tfjs-react-native
+      // Example: const imageTensor = decodeJpeg(frameBuffer);
+      
+      // For now, this is a placeholder that demonstrates the flow
+      // Actual implementation requires native bridge setup
+      const imageTensor = {
         width: frameData.width,
         height: frameData.height,
         data: frameData.data,
-      } as any);
+      } as any as tf.Tensor3D;
 
       const detectedHands = await detectHands(imageTensor);
       setHands(detectedHands);
 
       // Cleanup tensor
-      imageTensor.dispose();
+      if (imageTensor.dispose) {
+        imageTensor.dispose();
+      }
 
       // Calculate FPS
       frameCount.current++;

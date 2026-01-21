@@ -11,27 +11,30 @@ export interface FrameBuffer {
 
 /**
  * Convert camera frame to TensorFlow tensor
- * This is a placeholder - actual implementation would use
- * react-native-vision-camera's frame buffer API
+ * TODO: Implement proper frame buffer conversion using react-native-vision-camera's
+ * frame buffer API and @tensorflow/tfjs-react-native's image conversion utilities.
+ * This is a placeholder that demonstrates the expected interface.
  */
 export const frameToTensor = async (
   frame: FrameBuffer,
 ): Promise<Tensor3D | null> => {
   try {
-    // In production, use proper frame buffer conversion
-    // This would typically use the camera's native buffer
+    // TODO: In production, use proper frame buffer conversion
+    // Example using @tensorflow/tfjs-react-native:
+    // import {bundleResourceIO, decodeJpeg} from '@tensorflow/tfjs-react-native';
+    // const imageTensor = decodeJpeg(frameBuffer);
+    
     const {width, height, data} = frame;
 
-    // Create a canvas-like object for TensorFlow
-    // Note: This is simplified - actual implementation needs platform-specific handling
+    // Placeholder - in production, use platform-specific conversion
+    // This is a simplified representation for demonstration
     const imageTensor = {
       width,
       height,
       data,
     };
 
-    // Convert to tensor (browser.fromPixels equivalent for RN)
-    // In production, use @tensorflow/tfjs-react-native's decodeJpeg or similar
+    // Placeholder: This needs proper implementation with RN-specific methods
     return imageTensor as any as Tensor3D;
   } catch (error) {
     console.error('Error converting frame to tensor:', error);

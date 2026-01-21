@@ -59,11 +59,12 @@ class PerformanceMonitor {
     minProcessingTime: number;
     maxProcessingTime: number;
   } {
+    const hasData = this.processingTimes.length > 0;
     return {
       fps: this.fps,
       avgProcessingTime: this.getAverageProcessingTime(),
-      minProcessingTime: Math.min(...this.processingTimes, 0),
-      maxProcessingTime: Math.max(...this.processingTimes, 0),
+      minProcessingTime: hasData ? Math.min(...this.processingTimes) : 0,
+      maxProcessingTime: hasData ? Math.max(...this.processingTimes) : 0,
     };
   }
 
